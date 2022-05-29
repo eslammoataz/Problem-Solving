@@ -1,0 +1,15 @@
+
+void bfs(int node){
+    queue<int>q;
+    q.push(node);
+    vis[node]=1;
+    while (!q.empty()){
+        int cur = q.front();
+        q.pop();
+        for(auto child : graph[cur])
+            if(!vis[child])
+                vis[child]=1 , q.push(child);
+
+    }
+
+}
