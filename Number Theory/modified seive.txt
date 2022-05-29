@@ -1,0 +1,12 @@
+int comp[NN];
+//roughly O(N log N)
+void modified_sieve() {
+    //for(int i = 0; i < NN; ++i) comp[i] = i;
+    iota(comp, comp + NN, 0);
+    comp[0] = comp[1] = -1;
+    for (int i = 2; i < NN / i; ++i)
+        if (comp[i] == i)
+            for (int j = i * i; j < NN; j += i)
+                if (comp[j] == j)
+                    comp[j] = i;
+}
