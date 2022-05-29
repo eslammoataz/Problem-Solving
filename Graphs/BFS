@@ -9,7 +9,5 @@ void bfs(int node){
         for(auto child : graph[cur])
             if(!vis[child])
                 vis[child]=1 , q.push(child);
-
     }
-
 }
