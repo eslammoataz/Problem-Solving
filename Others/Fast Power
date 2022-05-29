@@ -1,0 +1,8 @@
+ll fastpow(ll b, ll p) {
+    if (!p) return 1;
+    ll ret = fastpow(b, p >> 1);
+    ret = mul(ret, ret);
+    if (p & 1)
+        ret = mul(ret, b);
+    return ret;
+}
