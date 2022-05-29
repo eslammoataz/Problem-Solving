@@ -1,0 +1,27 @@
+struct BIT {
+    vector<int> tree;           // check long long here
+    BIT(int n) : tree(n + 2) {}
+
+    void update(int p, int v) {
+        for (int i = ++p; i < tree.size(); i += i & -i)
+            tree[i] += v;
+    }
+
+    void construct(int arr[], int size) {
+        for (int i = 0; i < size; ++i) {
+            update(i, arr[i]);
+        }
+    }
+
+    int get(int p) {
+        int sum = 0;            // check long long here
+        for (int i = ++p; i; i -= i & -i)
+            sum += tree[i];
+        return sum;
+    }
+
+    int query(int l, int r) {
+        return get(r) - get(l - 1);
+    }
+
+};
