@@ -1,0 +1,22 @@
+vector<ll> divisors(ll n) {
+    vector<ll> ret;
+    for (ll i = 1; i <= n / i; ++i) {
+        if (n % i == 0) {
+            ret.push_back(i);
+            if (i * i != n)
+                ret.push_back(n / i);
+        }
+    }
+    return ret;
+}
+
+
+-
+for (int i = 1; i <= c / i; ++i) {
+        if (c % i == 0) {
+            ans++;
+            if (i != c / i) {
+                ++ans;
+            }
+        }
+    }
