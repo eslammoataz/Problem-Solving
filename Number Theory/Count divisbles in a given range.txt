@@ -1,0 +1,10 @@
+int countDivisibles(int A, int B, int M) //range[A..B]  divisble by M
+{
+   
+    // Add 1 explicitly as A is divisible by M
+    if (A % M == 0)
+        return (B / M) - (A / M) + 1;
+ 
+    // A is not divisible by M
+    return (B / M) - (A / M);
+}
