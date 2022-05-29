@@ -1,0 +1,8 @@
+ll kruksal(){
+    ll cost=0;
+    for (int i = 0; i <m; ++i) {
+        if(find(arr[i].a)!= find(arr[i].b))
+            cost+=arr[i].w , join(arr[i].a,arr[i].b);
+    }
+    return cost;
+}
