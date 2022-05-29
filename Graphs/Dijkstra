@@ -1,0 +1,19 @@
+ priority_queue<pair<ll, ll> ,  vector<pair<ll,ll>> , greater<pair<ll,ll>>> pq;
+        pq.push({0, src});
+        dis[src] = 0;
+        while (!pq.empty()){
+            pair<ll, ll> parent = pq.top();
+            pq.pop();
+           ll curr = parent.second;
+           ll curdis = parent.first;
+           if(curr == tar)
+               break;
+            if(curdis != dis[curr])
+                continue;
+            for(auto &edge : graph[curr]){
+                if(curdis + edge .first < dis [edge.second]){
+                    dis[edge.second]=curdis+ edge.first;
+                    pq.push({dis[edge.second] , edge.second});
+                }
+            }
+        }
