@@ -1,0 +1,12 @@
+//TTTTTTTTTTFFFFFFFFFFF
+ll BS_last() {
+	ll st = -1, en = 1e18;
+	ll mid;
+	while (st < en) {
+		mid = st + (en - st + 1) / 2;
+		if (valid(mid))
+			st = mid;
+		else
+			en = mid - 1;
+	}
+}
