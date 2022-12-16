@@ -1,3 +1,7 @@
+ll mul(ll a, ll b) {
+    return ((a % mod) * (b % mod)) % mod;
+}
+ 
 ll fastpow(ll b, ll p) {
     if (!p) return 1;
     ll ret = fastpow(b, p >> 1);
