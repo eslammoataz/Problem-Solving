@@ -47,7 +47,7 @@ void build() {
     }
 }
 
-ll query(int l, int r) {
+ll query(int l, int r) { //Log(N)
     int sz = r - l + 1; // looping on the binary representation of the query size
 
     ll ret = lloo;
