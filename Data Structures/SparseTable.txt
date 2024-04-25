@@ -29,10 +29,11 @@ public:
 
 
 ll merge(ll a, ll b) {
-    return a&b;
+    return min(a,b);
 }
 
 ll T[N][30], n, arr[N], q;
+int LOG[N];
 
 void build() {
     for (int i = 0; i <= n; ++i) {
@@ -59,4 +60,17 @@ ll query(int l, int r) { //Log(N)
         }
     }
     return ret;
+}
+
+void preCount() {
+    LOG[1] = 0;
+    for (int i = 2; i <= 200001; i++) {
+        LOG[i] = LOG[i >> 1] + 1;
+    }
+}
+
+ll query2(int l, int r) {
+    int sz = r - l + 1; // looping on the binary representation of the query size
+    int pw = LOG[sz];
+    return merge(T[l][pw], T[r-(1<<pw)+1][pw]);
 }
