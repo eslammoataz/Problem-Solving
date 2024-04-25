@@ -69,7 +69,7 @@ void preCount() {
     }
 }
 
-ll query2(int l, int r) {
+ll query2(int l, int r) { //BigO(1)
     int sz = r - l + 1; // looping on the binary representation of the query size
     int pw = LOG[sz];
     return merge(T[l][pw], T[r-(1<<pw)+1][pw]);
